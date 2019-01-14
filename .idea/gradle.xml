@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/example" />
             <option value="$PROJECT_DIR$/slider" />
+            <option value="$PROJECT_DIR$/sweep" />
             <option value="$PROJECT_DIR$/twin" />
             <option value="$PROJECT_DIR$/ui-inter" />
           </set>

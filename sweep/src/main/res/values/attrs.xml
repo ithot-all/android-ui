@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SweepView">
+        <attr name="sweep_strokeWidth" format="integer|reference|float|dimension" />
+        <attr name="sweep_startAngle" format="integer|reference|float|dimension" />
+        <attr name="sweep_animateDuration" format="integer|reference" />
+        <attr name="sweep_sweepAngle" format="integer|reference|float|dimension" />
+        <attr name="sweep_shadowRadius" format="integer|reference|float|dimension" />
+        <attr name="sweep_shadowEnable" format="boolean" />
+        <attr name="sweep_shadowColor" format="reference|color" />
+        <attr name="sweep_backgroundColor" format="reference|color" />
+        <attr name="sweep_foregroundColor" format="reference|color" />
+        <attr name="sweep_animateType" format="enum">
+            <enum name="linear" value="0" />
+            <enum name="accelerate" value="1" />
+            <enum name="decelerate" value="2" />
+        </attr>
+        <attr name="sweep_strokeCap" format="enum">
+            <enum name="round" value="0" />
+            <enum name="butt" value="1" />
+            <enum name="square" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>

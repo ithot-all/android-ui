@@ -9,33 +9,81 @@
         android:id="@+id/ll_box_tl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="50dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="30dp"
-            android:layout_marginTop="20dp"
-            android:text="TwinLayer"
-            android:textColor="#646464"
-            android:textSize="25sp" />
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal">
 
-        <org.ithot.android.ui.twin.TwinView
-            android:id="@+id/tl_view"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:layout_gravity="center_horizontal" />
+            <org.ithot.android.ui.twin.TwinView
+                android:id="@+id/twin_view"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal" />
 
-        <org.ithot.android.ui.slider.SliderView
-            android:id="@+id/silder_view"
+            <TextView
+                android:id="@+id/tv_twin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
             android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal">
+
+            <org.ithot.android.ui.slider.SliderView
+                android:id="@+id/silder_view"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                app:slider_indicatorRadius="15dp"
+                app:slider_trackForegroundColor="#8bc34a" />
+
+            <TextView
+                android:id="@+id/tv_slider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal">
+
+            <org.ithot.android.ui.sweep.SweepView
+                android:id="@+id/sweep_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tv_sweep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_go"
+            android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="50dp"
-            android:layout_marginTop="50dp"
-            app:slider_indicatorRadius="10dp"
-            app:slider_trackForegroundColor="#8bc34a" />
+            android:layout_marginTop="20dp"
+            android:text="go" />
 
     </LinearLayout>
 

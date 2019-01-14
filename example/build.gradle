@@ -8,7 +8,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0"
+        versionName "0.0.1"
     }
 
     buildTypes {
@@ -22,6 +22,7 @@ android {
 
 dependencies {
     implementation project(':twin')
+    implementation project(':sweep')
     implementation project(':slider')
     implementation "org.ithot.android.ui.inter:listener:0.0.1"
 }
