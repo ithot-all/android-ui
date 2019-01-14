@@ -1,1 +1,1 @@
-include ':twinlayer', ':ui-inter', ':example', ':seekbar'
+include ':ui-inter', ':example', ':twin', ':slider'

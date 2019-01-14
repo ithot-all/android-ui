@@ -4,7 +4,7 @@ apply plugin: 'com.novoda.bintray-release'
 publish {
     userOrg = "dtboy"
     groupId = "org.ithot.android.ui.inter"
-    artifactId = "ui-inter"
+    artifactId = "listener"
     publishVersion = "0.0.1"
     desc = "android ui base listener"
     website = "https://github.com/ithot-all/android-ui.git"

@@ -4,7 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidUI.iml" filepath="$PROJECT_DIR$/AndroidUI.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
-      <module fileurl="file://$PROJECT_DIR$/twinlayer/twinlayer.iml" filepath="$PROJECT_DIR$/twinlayer/twinlayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slider/slider.iml" filepath="$PROJECT_DIR$/slider/slider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/twin/twin.iml" filepath="$PROJECT_DIR$/twin/twin.iml" />
       <module fileurl="file://$PROJECT_DIR$/ui-inter/ui-inter.iml" filepath="$PROJECT_DIR$/ui-inter/ui-inter.iml" />
     </modules>
   </component>

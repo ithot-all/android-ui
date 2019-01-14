@@ -24,5 +24,4 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-tasks.getByPath(":ui-inter:bintrayUpload").enabled = false
-tasks.getByPath(":twinlayer:bintrayUpload").enabled = false
+tasks.getByPath(":ui-inter:bintrayUpload").enabled = true

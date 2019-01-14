@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SliderView">
+        <attr name="slider_indicatorShadowRadius" format="reference|integer|float|dimension" />
+        <attr name="slider_trackShadowRadius" format="reference|integer|float|dimension" />
+        <attr name="slider_indicatorRadius" format="reference|integer|float|dimension" />
+        <attr name="slider_trackHeight" format="reference|integer|float|dimension" />
+        <attr name="slider_indicatorShadowEnable" format="boolean" />
+        <attr name="slider_trackShadowEnable" format="boolean" />
+        <attr name="slider_indicatorShadowColor" format="reference|color" />
+        <attr name="slider_trackBackgroundColor" format="reference|color" />
+        <attr name="slider_trackForegroundColor" format="reference|color" />
+        <attr name="slider_trackShadowColor" format="reference|color" />
+        <attr name="slider_indicatorColor" format="reference|color" />
+    </declare-styleable>
+</resources>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <declare-styleable name="TwinLayerView">
-        <attr name="tl_layer" format="reference" />
-        <attr name="tl_foreColor" format="reference|color" />
-        <attr name="tl_backColor" format="reference|color" />
-    </declare-styleable>
-</resources>
