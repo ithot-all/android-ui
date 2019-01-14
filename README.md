@@ -1,4 +1,4 @@
-# android-ui 
+# android-ui [![Build Status](https://www.travis-ci.org/ithot-all/android-ui.svg?branch=master)](https://www.travis-ci.org/ithot-all/android-ui)
 :fire: A series of Android view controls
 
 ### listener
