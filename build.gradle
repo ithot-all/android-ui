@@ -25,3 +25,6 @@ task clean(type: Delete) {
 }
 
 tasks.getByPath(":ui-inter:bintrayUpload").enabled = true
+tasks.getByPath(":slider:bintrayUpload").enabled = true
+tasks.getByPath(":sweep:bintrayUpload").enabled = true
+tasks.getByPath(":twin:bintrayUpload").enabled = true

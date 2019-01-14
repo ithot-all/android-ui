@@ -1,4 +1,15 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = "dtboy"
+    groupId = "org.ithot.android.ui.slider"
+    artifactId = "slider"
+    publishVersion = "0.0.1"
+    desc = "android slider view"
+    website = "https://github.com/ithot-all/android-ui.git"
+}
+
 
 android {
     compileSdkVersion 27
