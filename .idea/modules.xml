@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidUI.iml" filepath="$PROJECT_DIR$/AndroidUI.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
       <module fileurl="file://$PROJECT_DIR$/twinlayer/twinlayer.iml" filepath="$PROJECT_DIR$/twinlayer/twinlayer.iml" />
       <module fileurl="file://$PROJECT_DIR$/ui-inter/ui-inter.iml" filepath="$PROJECT_DIR$/ui-inter/ui-inter.iml" />
     </modules>

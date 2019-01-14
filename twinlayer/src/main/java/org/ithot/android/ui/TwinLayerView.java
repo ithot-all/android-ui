@@ -14,8 +14,14 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewTreeObserver;
+
+import org.ithot.android.ui.inter.BaseUIListener;
 
 public class TwinLayerView extends View {
+
+    private static final int TYPE_BACK = 0;
+    private static final int TYPE_FORE = 1;
 
     private Bitmap fore;
     private Bitmap back;
@@ -32,10 +38,16 @@ public class TwinLayerView extends View {
     private float downY;
     private int foreColor;
     private int backColor;
+    private BaseUIListener listener;
+    private boolean already;
 
     public TwinLayerView(Context context) {
         super(context);
         init(null);
+    }
+
+    public void setListener(BaseUIListener listener) {
+        this.listener = listener;
     }
 
     public TwinLayerView(Context context, AttributeSet attrs) {
@@ -82,39 +94,72 @@ public class TwinLayerView extends View {
     }
 
     private void performEvent(float ey) {
-        float ratio = (int) ((downY - ey) / height * 100f);
+        float ratio = (downY - ey) / height * 100f;
         float result = originProgress + ratio;
         if (result < 0f) {
             result = 0f;
         } else if (result > 100f) {
             result = 100f;
         }
-        setProgress(result);
+        run(result);
+        if (null != listener) {
+            listener.call(result);
+        }
     }
 
-    public void setProgress(float progress) {
+    public void run(float progress) {
         this.progress = progress;
         invalidate();
     }
 
-    public void setForeColor(int color) {
-        Bitmap base = Bitmap.createScaledBitmap(meta, width, height, true);
-        fore = Bitmap.createBitmap(base.getWidth(), base.getHeight(), base.getConfig());
-        Canvas canvas = new Canvas(fore);
-        Paint paint = new Paint();
-        paint.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
-        canvas.drawBitmap(base, 0, 0, paint);
+    public void run(float progress, float min, float max) {
+        float unit = (max - min) / 100f;
+        this.progress = (progress - min) / unit;
         invalidate();
     }
 
+    public void setForeColor(int color) {
+        setColor(color, TYPE_FORE);
+    }
+
     public void setBackColor(int color) {
-        Bitmap base = Bitmap.createScaledBitmap(meta, width, height, true);
-        back = Bitmap.createBitmap(base.getWidth(), base.getHeight(), base.getConfig());
-        Canvas canvas = new Canvas(back);
-        Paint paint = new Paint();
-        paint.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
-        canvas.drawBitmap(base, 0, 0, paint);
-        invalidate();
+        setColor(color, TYPE_BACK);
+    }
+
+    private void setColor(final int color, final int type) {
+        if (already) {
+            Bitmap base = Bitmap.createScaledBitmap(meta, width, height, true);
+            Bitmap temp = Bitmap.createBitmap(base.getWidth(), base.getHeight(), base.getConfig());
+            Canvas canvas = new Canvas(temp);
+            Paint paint = new Paint();
+            paint.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
+            canvas.drawBitmap(base, 0, 0, paint);
+            if (type == TYPE_BACK) {
+                back = temp;
+            } else {
+                fore = temp;
+            }
+            invalidate();
+        } else {
+            getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    Bitmap base = Bitmap.createScaledBitmap(meta, width, height, true);
+                    Bitmap temp = Bitmap.createBitmap(base.getWidth(), base.getHeight(), base.getConfig());
+                    Canvas canvas = new Canvas(temp);
+                    Paint paint = new Paint();
+                    paint.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
+                    canvas.drawBitmap(base, 0, 0, paint);
+                    if (type == TYPE_BACK) {
+                        back = temp;
+                    } else {
+                        fore = temp;
+                    }
+                    invalidate();
+                    getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                }
+            });
+        }
     }
 
     @Override
@@ -124,6 +169,9 @@ public class TwinLayerView extends View {
             case MotionEvent.ACTION_DOWN:
                 downY = ey;
                 originProgress = progress;
+                if (listener != null) {
+                    listener.start(progress);
+                }
                 break;
             case MotionEvent.ACTION_MOVE:
                 performEvent(ey);
@@ -131,6 +179,9 @@ public class TwinLayerView extends View {
             case MotionEvent.ACTION_UP:
                 if (Math.abs(ey - downY) < 2) {
                     performClick();
+                }
+                if (listener != null) {
+                    listener.end(progress);
                 }
                 break;
         }
@@ -141,13 +192,14 @@ public class TwinLayerView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         initLayer();
+        already = true;
         src.set(0, 0, width, height);
         dst.set(0, 0, width, height);
         float offset = progress * per;
         divSrc.set(0, (int) (height - offset), width, height);
         divDst.set(0, height - offset, width, height);
-        canvas.drawBitmap(fore, src, dst, null);
-        canvas.drawBitmap(back, divSrc, divDst, null);
+        canvas.drawBitmap(back, src, dst, null);
+        canvas.drawBitmap(fore, divSrc, divDst, null);
     }
 
     private void initLayer() {

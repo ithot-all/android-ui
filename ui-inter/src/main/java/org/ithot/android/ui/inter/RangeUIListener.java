@@ -20,11 +20,12 @@ public abstract class RangeUIListener extends BaseUIListener {
 
     /**
      * Transformation algorithm @see https://blog.csdn.net/Touch_Dream/article/details/62076236
+     *
      * @param value
      * @return
      */
     @Override
     protected float transform(float value) {
-        return (int) ((max - min) / sum * value + min);
+        return (max - min) / sum * value + min;
     }
 }
