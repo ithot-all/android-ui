@@ -16,7 +16,7 @@
             android:layout_width="400dp"
             android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <org.ithot.android.ui.twin.TwinView
                 android:id="@+id/twin_view"
@@ -64,12 +64,12 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <org.ithot.android.ui.sweep.SweepView
                 android:id="@+id/sweep_view"
                 app:sweep_foregroundColor="@color/colorAccent"
-                app:sweep_strokeWidth="4dp"
+                app:sweep_strokeWidth="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -84,15 +84,15 @@
 
         <Button
             android:id="@+id/btn_go"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
             android:background="@drawable/bg_btn_go"
             android:text="Run"
             android:textColor="#353535"
             android:textSize="20sp"
-            android:visibility="visible" />
+            android:visibility="gone" />
 
     </LinearLayout>
 
