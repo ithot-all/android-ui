@@ -9,7 +9,7 @@ implementation "org.ithot.android.ui.inter:listener:0.0.1"
 ### slider
 ![slider](arts/slider.gif)
 ```gradle
-implementation "org.ithot.android.ui.slider:slider:0.0.1"
+implementation "org.ithot.android.ui.slider:slider:0.0.2"
 ```
 
 ### sweep
