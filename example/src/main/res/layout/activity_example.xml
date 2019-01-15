@@ -13,46 +13,48 @@
         android:paddingTop="50dp">
 
         <RelativeLayout
-            android:layout_width="150dp"
+            android:layout_width="400dp"
             android:layout_height="150dp"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone">
 
             <org.ithot.android.ui.twin.TwinView
                 android:id="@+id/twin_view"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_gravity="center_horizontal" />
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                app:twin_foreColor="#ffff00" />
 
             <TextView
                 android:id="@+id/tv_twin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
         </RelativeLayout>
 
 
         <RelativeLayout
-            android:layout_width="300dp"
+            android:layout_width="400dp"
             android:layout_height="150dp"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone">
 
             <org.ithot.android.ui.slider.SliderView
                 android:id="@+id/silder_view"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="20dp"
-                android:layout_marginTop="20dp"
-                app:slider_indicatorRadius="15dp"
-                app:slider_trackForegroundColor="#8bc34a" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:slider_indicatorRadius="12dp"
+                app:slider_trackForegroundColor="#8bc34a"
+                app:slider_trackHeight="6dp" />
 
             <TextView
                 android:id="@+id/tv_slider"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
         </RelativeLayout>
@@ -61,10 +63,13 @@
         <RelativeLayout
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:visibility="visible">
 
             <org.ithot.android.ui.sweep.SweepView
                 android:id="@+id/sweep_view"
+                app:sweep_foregroundColor="@color/colorAccent"
+                app:sweep_strokeWidth="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -82,8 +87,12 @@
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:text="go" />
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_btn_go"
+            android:text="Run"
+            android:textColor="#353535"
+            android:textSize="20sp"
+            android:visibility="visible" />
 
     </LinearLayout>
 

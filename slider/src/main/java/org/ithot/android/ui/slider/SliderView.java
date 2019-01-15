@@ -56,27 +56,47 @@ public class SliderView extends View {
 
     private SliderView(Context context) {
         this(context, (AttributeSet) null, 0);
+        initial(null);
     }
 
     public SliderView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
+        initial(attrs);
     }
 
     public SliderView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        TypedArray ta = getContext().obtainStyledAttributes(R.styleable.SliderView);
-        indicatorRadius = ta.getDimension(R.styleable.SliderView_slider_indicatorRadius, 30);
-        indicatorColor = ta.getColor(R.styleable.SliderView_slider_indicatorColor, Color.WHITE);
-        indicatorShadowEnable = ta.getBoolean(R.styleable.SliderView_slider_indicatorShadowEnable, true);
-        indicatorShadowColor = ta.getColor(R.styleable.SliderView_slider_indicatorShadowColor, Color.BLACK);
-        indicatorShadowRadius = ta.getDimension(R.styleable.SliderView_slider_indicatorShadowRadius, 6);
-        trackHeight = ta.getDimension(R.styleable.SliderView_slider_trackHeight, 18);
-        trackBackgroundColor = ta.getColor(R.styleable.SliderView_slider_trackBackgroundColor, Color.GRAY);
-        trackForegroundColor = ta.getColor(R.styleable.SliderView_slider_trackForegroundColor, Color.CYAN);
-        trackShadowEnable = ta.getBoolean(R.styleable.SliderView_slider_trackShadowEnable, true);
-        trackShadowColor = ta.getColor(R.styleable.SliderView_slider_trackShadowColor, Color.BLACK);
-        trackShadowRadius = (int) ta.getDimension(R.styleable.SliderView_slider_trackShadowRadius, 6);
-        ta.recycle();
+        initial(attrs);
+    }
+
+    private void initial(AttributeSet attrs) {
+        if (attrs != null) {
+            TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.SliderView);
+            indicatorRadius = ta.getDimension(R.styleable.SliderView_slider_indicatorRadius, 30);
+            indicatorColor = ta.getColor(R.styleable.SliderView_slider_indicatorColor, Color.WHITE);
+            indicatorShadowEnable = ta.getBoolean(R.styleable.SliderView_slider_indicatorShadowEnable, true);
+            indicatorShadowColor = ta.getColor(R.styleable.SliderView_slider_indicatorShadowColor, Color.BLACK);
+            indicatorShadowRadius = ta.getDimension(R.styleable.SliderView_slider_indicatorShadowRadius, 6);
+            trackHeight = ta.getDimension(R.styleable.SliderView_slider_trackHeight, 18);
+            trackBackgroundColor = ta.getColor(R.styleable.SliderView_slider_trackBackgroundColor, Color.GRAY);
+            trackForegroundColor = ta.getColor(R.styleable.SliderView_slider_trackForegroundColor, Color.CYAN);
+            trackShadowEnable = ta.getBoolean(R.styleable.SliderView_slider_trackShadowEnable, true);
+            trackShadowColor = ta.getColor(R.styleable.SliderView_slider_trackShadowColor, Color.BLACK);
+            trackShadowRadius = (int) ta.getDimension(R.styleable.SliderView_slider_trackShadowRadius, 6);
+            ta.recycle();
+        } else {
+            indicatorRadius = 30;
+            indicatorColor = Color.WHITE;
+            indicatorShadowEnable = true;
+            indicatorShadowColor = Color.BLACK;
+            indicatorShadowRadius = 6;
+            trackHeight = 18;
+            trackBackgroundColor = Color.GRAY;
+            trackForegroundColor = Color.CYAN;
+            trackShadowEnable = true;
+            trackShadowColor = Color.BLACK;
+            trackShadowRadius = 6;
+        }
         if (indicatorShadowEnable || trackShadowEnable) {
             setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         }
@@ -89,12 +109,14 @@ public class SliderView extends View {
             trackBackgroundPaint.setShadowLayer(trackShadowRadius, 0, 0, trackShadowColor);
         }
         trackBackgroundPaint.setStyle(Paint.Style.STROKE);
+
         trackForegroundPaint = new Paint();
         trackForegroundPaint.setColor(trackForegroundColor);
         trackForegroundPaint.setAntiAlias(true);
         trackForegroundPaint.setStrokeCap(seekCap);
         trackForegroundPaint.setStrokeWidth(trackHeight);
         trackForegroundPaint.setStyle(Paint.Style.STROKE);
+
         indicatorPaint = new Paint();
         indicatorPaint.setColor(indicatorColor);
         indicatorPaint.setAntiAlias(true);

@@ -38,7 +38,7 @@ public class ExampleActivity extends Activity {
         twinView.setListener(new UIListener() {
             @Override
             public void move(float value) {
-                tvTwin.setText(value + "%");
+                tvTwin.setText((int) value + "%");
                 debug("[twinView] " + value);
             }
         });
@@ -46,25 +46,25 @@ public class ExampleActivity extends Activity {
         sliderView.setListener(new UIListener() {
             @Override
             public void move(float value) {
-                tvSlider.setText(value + "%");
+                tvSlider.setText((int) value + "%");
                 debug("[sliderView] " + value);
             }
 
             @Override
             public void start(float value) {
-                tvSlider.setText(value + "%");
+                tvSlider.setText((int) value + "%");
             }
 
             @Override
             public void end(float value) {
-                tvSlider.setText(value + "%");
+                tvSlider.setText((int) value + "%");
             }
         });
 
         sweepView.setListener(new UIListener() {
             @Override
             public void move(float value) {
-                tvSweep.setText(value + "%");
+                tvSweep.setText((int) value + "%");
                 debug("[sweepView] " + value);
             }
         });
@@ -72,7 +72,11 @@ public class ExampleActivity extends Activity {
         findViewById(R.id.btn_go).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sweepView.go(50);
+                if (sweepView.getProgress() == 80) {
+                    sweepView.go(0);
+                } else {
+                    sweepView.go(80);
+                }
             }
         });
     }
