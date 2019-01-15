@@ -20,3 +20,6 @@ implementation "org.ithot.android.ui.sweep:sweep:0.0.1"
 ```gradle
 implementation "org.ithot.android.ui.twin:twin:0.0.1"
 ```
+
+# usage
+[see example](https://github.com/ithot-all/android-ui/tree/master/example)
