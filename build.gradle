@@ -24,6 +24,10 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
+task deploy(type: Exec){
+    println("do prebuild stuff:")
+}
+
 tasks.getByPath(":ui-inter:bintrayUpload").enabled = true
 tasks.getByPath(":slider:bintrayUpload").enabled = true
 tasks.getByPath(":sweep:bintrayUpload").enabled = true

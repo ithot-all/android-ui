@@ -167,7 +167,7 @@ public class SliderView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (!isEnabled()) super.onTouchEvent(event);
+        if (!isEnabled()) return super.onTouchEvent(event);
         float ex = event.getX();
         switch (event.getActionMasked()) {
             case MotionEvent.ACTION_DOWN:

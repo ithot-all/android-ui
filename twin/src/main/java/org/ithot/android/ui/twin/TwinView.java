@@ -176,7 +176,7 @@ public class TwinView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (!isEnabled()) super.onTouchEvent(event);
+        if (!isEnabled()) return super.onTouchEvent(event);
         float ey = event.getY();
         switch (event.getActionMasked()) {
             case MotionEvent.ACTION_DOWN:
