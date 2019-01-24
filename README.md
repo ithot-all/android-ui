@@ -1,6 +1,8 @@
 # android-ui
-:fire: A series of Android view controls [![Build Status](https://img.shields.io/travis/ithot-all/android-ui/master.svg?style=flat-square)](https://travis-ci.org/ithot-all/android-ui)
 
+[![Build Status](https://img.shields.io/travis/ithot-all/android-ui/master.svg?style=flat-square)](https://travis-ci.org/ithot-all/android-ui)
+
+:fire: A series of Android view controls 
 ### Listener (required)
 ```gradle
 implementation "org.ithot.android.ui.inter:listener:0.0.1"
