@@ -1,4 +1,5 @@
-# android-ui [![Build Status](https://www.travis-ci.org/ithot-all/android-ui.svg?branch=master)](https://www.travis-ci.org/ithot-all/android-ui)
+# android-ui
+[![Build Status](https://www.travis-ci.org/ithot-all/android-ui.svg?branch=master)](https://img.shields.io/travis/ithot-all/android-ui/master.svg?style=flat-square)
 :fire: A series of Android view controls
 
 ### Listener (required)
