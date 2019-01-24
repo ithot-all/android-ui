@@ -1,4 +1,4 @@
-# android-ui
+# Android-UI
 
 [![Build Status](https://img.shields.io/travis/ithot-all/android-ui/master.svg?style=flat-square)](https://travis-ci.org/ithot-all/android-ui)
 
