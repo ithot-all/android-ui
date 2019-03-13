@@ -4,7 +4,7 @@ apply plugin: 'com.novoda.bintray-release'
 publish {
     userOrg = "dtboy"
     groupId = "org.ithot.android.ui"
-    artifactId = "slider"
+    artifactId = "sliderview"
     publishVersion = "0.0.1"
     desc = "android slider view"
     website = "https://github.com/ithot-all/android-ui.git"
@@ -17,8 +17,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 27
-        versionCode 3
-        versionName "0.0.3"
+        versionCode 1
+        versionName "0.0.1"
     }
 
     buildTypes {

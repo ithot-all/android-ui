@@ -4,7 +4,7 @@ apply plugin: 'com.novoda.bintray-release'
 publish {
     userOrg = "dtboy"
     groupId = "org.ithot.android.ui"
-    artifactId = "sweep"
+    artifactId = "sweepview"
     publishVersion = "0.0.1"
     desc = "android sweep view"
     website = "https://github.com/ithot-all/android-ui.git"
