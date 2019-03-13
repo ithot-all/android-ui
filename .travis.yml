@@ -1,19 +1,7 @@
 language: android
 
-jdk:
-- oraclejdk8
-
 script:
 - ./gradlew assembleRelease --stacktrace
-
-
-android:
-  components:
-  - tools
-  - platform-tools
-  - build-tools-28.0.3
-  - android-28
-  - extra-android-m2respository
 
 sudo: required
 
