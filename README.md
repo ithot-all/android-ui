@@ -10,9 +10,11 @@ implementation "org.ithot.android.ui:ui-inter:0.0.1"
 
 ### Slider
 ![slider](arts/slider.gif)
+## install
 ```gradle
 implementation "org.ithot.android.ui:sliderview:0.0.1"
 ```
+## usage
 ```xml
 <org.ithot.android.ui.slider.SliderView
     android:id="@+id/silder_view"
@@ -26,9 +28,11 @@ implementation "org.ithot.android.ui:sliderview:0.0.1"
 
 ### Sweep
 ![sweep](arts/sweep.gif)
+## install
 ```gradle
 implementation "org.ithot.android.ui:sweepview:0.0.1"
 ```
+## usage
 ```xml
 <org.ithot.android.ui.sweep.SweepView
     android:id="@+id/sweep_view"
@@ -40,9 +44,11 @@ implementation "org.ithot.android.ui:sweepview:0.0.1"
 
 ### Twin
 ![twin](arts/twin.gif)
+## install
 ```gradle
 implementation "org.ithot.android.ui:twinview:0.0.1"
 ```
+## usage
 ```xml
  <org.ithot.android.ui.twin.TwinView
     android:id="@+id/twin_view"
@@ -53,5 +59,5 @@ implementation "org.ithot.android.ui:twinview:0.0.1"
     app:twin_foreColor="#ffff00" />
 ```
 
-## usage
+## MORE
 [Example](https://github.com/ithot-all/android-ui/tree/master/example)
