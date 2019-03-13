@@ -34,5 +34,5 @@ android {
 }
 
 dependencies {
-    compileOnly project(':ui-inter')
+    compileOnly 'org.ithot.android.ui:ui-inter:0.0.1'
 }

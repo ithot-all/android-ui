@@ -3,13 +3,13 @@
 
 ### Interfaces (Required)
 ```gradle
-implementation "org.ithot.android.ui.inter:listener:0.0.1"
+implementation "org.ithot.android.ui:ui-inter:0.0.1"
 ```
 
 ### Slider
 ![slider](arts/slider.gif)
 ```gradle
-implementation "org.ithot.android.ui.slider:slider:0.0.1"
+implementation "org.ithot.android.ui:slider:0.0.1"
 ```
 ```xml
 <org.ithot.android.ui.slider.SliderView
@@ -25,7 +25,7 @@ implementation "org.ithot.android.ui.slider:slider:0.0.1"
 ### Sweep
 ![sweep](arts/sweep.gif)
 ```gradle
-implementation "org.ithot.android.ui.sweep:sweep:0.0.1"
+implementation "org.ithot.android.ui:sweep:0.0.1"
 ```
 ```xml
 <org.ithot.android.ui.sweep.SweepView
@@ -39,7 +39,7 @@ implementation "org.ithot.android.ui.sweep:sweep:0.0.1"
 ### Twin
 ![twin](arts/twin.gif)
 ```gradle
-implementation "org.ithot.android.ui.twin:twin:0.0.1"
+implementation "org.ithot.android.ui:twin:0.0.1"
 ```
 ```xml
  <org.ithot.android.ui.twin.TwinView
