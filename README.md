@@ -1,6 +1,8 @@
-# android-ui [![Build Status](https://www.travis-ci.org/ithot-all/android-ui.svg?branch=master)](https://www.travis-ci.org/ithot-all/android-ui)
-:fire: A series of Android view controls
+# Android-UI
 
+[![Build Status](https://img.shields.io/travis/ithot-all/android-ui/master.svg?style=flat-square)](https://travis-ci.org/ithot-all/android-ui)
+
+:fire: A series of Android view controls 
 ### Interfaces (Required)
 ```gradle
 implementation "org.ithot.android.ui:ui-inter:0.0.1"
