@@ -3,10 +3,10 @@ apply plugin: 'com.novoda.bintray-release'
 
 publish {
     userOrg = "dtboy"
-    groupId = "org.ithot.android.ui.inter"
-    artifactId = "listener"
+    groupId = "org.ithot.android.ui"
+    artifactId = "ui-inter"
     publishVersion = "0.0.1"
-    desc = "android ui base listener"
+    desc = "android ui base interfaces"
     website = "https://github.com/ithot-all/android-ui.git"
 }
 
@@ -26,6 +26,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    libraryVariants.all {
+        it.generateBuildConfig.enabled = false
     }
 
 }

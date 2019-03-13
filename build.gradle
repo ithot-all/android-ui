@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.android.tools.build:gradle:3.3.1'
         classpath 'com.novoda:bintray-release:0.9'
     }
 }
@@ -24,7 +24,7 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-tasks.getByPath(":ui-inter:bintrayUpload").enabled = false
+tasks.getByPath(":ui-inter:bintrayUpload").enabled = true
 tasks.getByPath(":slider:bintrayUpload").enabled = false
 tasks.getByPath(":sweep:bintrayUpload").enabled = false
-tasks.getByPath(":twin:bintrayUpload").enabled = true
+tasks.getByPath(":twin:bintrayUpload").enabled = false

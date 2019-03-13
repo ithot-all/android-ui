@@ -3,9 +3,9 @@ apply plugin: 'com.novoda.bintray-release'
 
 publish {
     userOrg = "dtboy"
-    groupId = "org.ithot.android.ui.twin"
+    groupId = "org.ithot.android.ui"
     artifactId = "twin"
-    publishVersion = "0.0.2"
+    publishVersion = "0.0.1"
     desc = "android twin view"
     website = "https://github.com/ithot-all/android-ui.git"
 }
@@ -28,8 +28,12 @@ android {
         }
     }
 
+    libraryVariants.all {
+        it.generateBuildConfig.enabled = false
+    }
+
 }
 
 dependencies {
-    compileOnly "org.ithot.android.ui.inter:listener:0.0.1"
+    compileOnly project(':ui-inter')
 }
